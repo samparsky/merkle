@@ -1,0 +1,24 @@
+{
+  "name": "merkle",
+  "version": "1.0.0",
+  "description": "A standard & sparse merkle tree implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samparsky/merkle.git"
+  },
+  "keywords": [
+    "merkle",
+    "sparse",
+    "tree"
+  ],
+  "author": "samparsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samparsky/merkle/issues"
+  },
+  "homepage": "https://github.com/samparsky/merkle#readme"
+}
