@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/samparsky/merkle/issues"
   },
-  "homepage": "https://github.com/samparsky/merkle#readme"
+  "homepage": "https://github.com/samparsky/merkle#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "tslint-config-airbnb": "^5.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.0"
+  }
 }
