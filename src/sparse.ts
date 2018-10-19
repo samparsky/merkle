@@ -7,7 +7,7 @@ https://ethresear.ch/t/merkle-tree-formation-with-odd-number-of-leaves/2681/2
 
 export default class SparseMerkleTree {
     constructor(){
-
+        
     }
 }
 

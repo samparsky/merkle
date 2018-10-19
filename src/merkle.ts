@@ -17,9 +17,9 @@ class MerkleTree {
 
     _leaves: Array<any>
     // _hashfn: () => ArrayBuffer
-    _nodeDigestFn: (data: any) => Uint8Array
+    _nodeDigestFn: (data: any) => Buffer
     _doubleHash: boolean
-    _layers: Array<Array<ArrayBuffer>>
+    _layers: Array<Array<Buffer>>
     _store: IStore
     
     /**
@@ -27,7 +27,7 @@ class MerkleTree {
      * @param leaves the leaves of the merkle tree
      * @param hashfn you can specify a custom hash function
      */
-    constructor( leaves: Array<any>, digestfn: (data: any) => ArrayBuffer, options: IOptions = {}){
+    constructor( leaves: Array<any>, options: IOptions = {}){
         // this._hashfn = hashfn
         this._nodeDigestFn = options.nodeDigestFn || digestfn
         this._doubleHash = options.doubleHash || false
@@ -36,7 +36,7 @@ class MerkleTree {
         this._generateLayers(this._leaves)
     }
 
-    get layers(): Array<Array<ArrayBuffer>> {
+    get layers(): Array<Array<Buffer>> {
         return this.layers
     }
 
@@ -56,7 +56,7 @@ class MerkleTree {
         return this._layers[this._layers.length - 1][0]
     }
 
-    _hash(data: ArrayBuffer): ArrayBuffer {
+    _hash(data: Buffer): Buffer {
         if(this._doubleHash){
             return this._nodeDigestFn(this._nodeDigestFn(data))
         }
@@ -97,7 +97,7 @@ class MerkleTree {
         let proof = []
         let index = this._leaves.indexOf(leave)
 
-        // if the leave can't be foudn
+        // if the leave can't be found
         if(index == -1) return null
         
         // let node = this._leaves[index]
@@ -119,6 +119,10 @@ class MerkleTree {
             let offset 
 
             if(odd){
+                proof.push({
+                    data: nodes[offset-1],
+                    left: true
+                })
                 
             } else {
                 proof.push({
@@ -126,13 +130,11 @@ class MerkleTree {
                     left: true
                 })
             }
-            
-
-
         }
+        
     }
 
-    verify(proof:[Uint8Array]): boolean {
+    verify(proof:[Buffer]): boolean {
         // merkle tree root
         const root = proof[proof.length - 1]
 

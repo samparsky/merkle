@@ -8,9 +8,13 @@ export interface ICreate {
 }
 
 export interface IOptions {
-    nodeDigestFn ?: () => ArrayBuffer
+    digestfn ?: (data: any) => Buffer
+    nodeDigestFn ?: (data: any) => Buffer
     store ?: IStore
     doubleHash ?: boolean
     inMemoryLayers ?: number
 }
 
+export interface IMerkle {
+
+}
