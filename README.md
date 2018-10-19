@@ -78,11 +78,11 @@ console.log({nonproof})
 ### Configuration
 You can customize the output of the by specifying the following
 
-| property | description | default 
---------------------------------
-*digestfn* |  You can specify a custom digest function | (data: any) => Buffer
-*nodeDigestfn* | This allows you to specify a custom hash function different from whats is used to hash the leave nodes. if not set equals to the digestfn | (data: any) => Buffer
-*doubleHash* | This allows you to specify to if the nodes are to be hashed twice | boolean, default: false
+| property | description | default |
+|-----|-------------|--------------|
+| *digestfn* |  You can specify a custom digest function | (data: any) => Buffer |
+| *nodeDigestfn* | This allows you to specify a custom hash function different from whats is used to hash the leave nodes. if not set equals to the digestfn | (data: any) => Buffer |
+| *doubleHash* | This allows you to specify to if the nodes are to be hashed twice | boolean, default: false |
 
 ## details
 Uses different hash functions for leaves & tree internal nodes. 
@@ -91,4 +91,7 @@ Uses different hash functions for leaves & tree internal nodes.
 
 
 ### Authors
-[https://twitter.com/samparsky](Omidiora Samuel)
+[Samuel](https://twitter.com/samparsky)
+
+### License
+MIT
